@@ -40,7 +40,13 @@ public class MinnesotaVikings {
         for (int playerIterable = 0; playerIterable < wideReceivers.length; playerIterable++) {
             System.out.println(wideReceivers[playerIterable] + " has " + receptions[playerIterable]
                     + " touchdowns.");
+            if (receptions[playerIterable] > highestScore) {
+                highestScore = receptions[playerIterable];
+                highestScorer = wideReceivers[playerIterable];
+            }
         }
+        System.out.println("The player with the highest scorer is " + highestScorer + " with " + highestScore
+                + " receptions.");
 
     }
 }
