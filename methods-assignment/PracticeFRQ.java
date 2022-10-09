@@ -32,8 +32,7 @@ public class PracticeFRQ {
         Draw.drawLine(x, y, x + len, y);
 
         // Draw the second line, we subtract len from Y because the first coordinate
-        is
-        // the top left corner, so we go downwards
+        // is the top left corner, so we go downwards
         Draw.drawLine(x, y, x, y - len);
 
         // Draw the third line, we keep `y - len` in both positions because we're
