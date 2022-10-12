@@ -12,7 +12,7 @@ public class PracticeFRQ {
         // enough space
         // These first 2 if-statements are for the cases where the lines are too long
         // along the top or right
-        if (10 - x < len) {
+        if (10 < len + x) {
             len = 10 - x;
         }
         if (10 - y < len) {
