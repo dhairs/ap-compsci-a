@@ -118,6 +118,7 @@ public class Gradebook {
         }
     }
 
+    // define the displayGrades method, take in a student id as paramter and print
     public void displayGrades(int student) {
         System.out.println("Student " + student + " has the following grades:");
 
@@ -129,10 +130,13 @@ public class Gradebook {
         }
     }
 
+    // define the displayAttendance method, take in a student id as paramter and
+    // print
     public void displayAttendance(int student) {
         System.out.println("Student " + student + " has the following attendance:");
 
-        // iterate through the student's grades and print out the class names and grades
+        // iterate through the student's attendance and print out the class names and
+        // percentage
         for (int key = 0; key < studentClasses.get(student).size(); key++) {
             System.out.println(
                     classOptions[studentClasses.get(student).get(key)] + ": "
