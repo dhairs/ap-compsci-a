@@ -28,4 +28,15 @@ public class Employee {
     public void raise(int percent) {
         salary += salary * percent / 100;
     }
+
+    public void bonus() {
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Salary: " + salary);
+        System.out.println("Years employed: " + yearsEmployed);
+        if (yearsEmployed > 10) {
+            System.out.println("Bonus: " + salary * 0.1);
+        } else {
+            System.out.println("Bonus: " + salary * 0.05);
+        }
+    }
 }

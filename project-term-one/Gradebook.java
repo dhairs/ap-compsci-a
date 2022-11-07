@@ -42,7 +42,7 @@ public class Gradebook {
     // define the addClasses method, which takes in a a parameter of student number
     public void addClasses(int student) {
 
-        for (int iterator = 0; iterator <= maxClasses; iterator++) {
+        for (int iterator = 0; iterator < maxClasses; iterator++) {
 
             // Ask user to select a class
             System.out.println("Please enter the class number for the class you would like to add.");
@@ -124,9 +124,10 @@ public class Gradebook {
 
         // iterate through the student's grades and print out the class names and grades
         for (int key = 0; key < studentClasses.get(student).size(); key++) {
+            int usrClass = studentClasses.get(student).get(key);
             System.out.println(
-                    classOptions[studentClasses.get(student).get(key)] + ": "
-                            + studentGrades.get(student).get(studentClasses.get(student).get(key)));
+                    classOptions[usrClass] + ": "
+                            + studentGrades.get(student).get(usrClass));
         }
     }
 
@@ -138,9 +139,11 @@ public class Gradebook {
         // iterate through the student's attendance and print out the class names and
         // percentage
         for (int key = 0; key < studentClasses.get(student).size(); key++) {
+            int usrClass = studentClasses.get(student).get(key);
+
             System.out.println(
-                    classOptions[studentClasses.get(student).get(key)] + ": "
-                            + studentAttendance.get(student).get(studentClasses.get(student).get(key)));
+                    classOptions[usrClass] + ": "
+                            + studentAttendance.get(student).get(usrClass));
         }
     }
 
