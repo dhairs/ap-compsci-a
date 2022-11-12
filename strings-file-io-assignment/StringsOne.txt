@@ -1,0 +1,1 @@
+Hello! This is the strings assignment for AP CSA! The vowels should be gone from this sentence when the program prints it out.
