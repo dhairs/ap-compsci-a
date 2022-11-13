@@ -11,6 +11,9 @@ public class StringsTwo {
         // SET UP FILE READING INPUT THROUGH SCANNER
         Scanner input = new Scanner(new File("StringsTwo.txt"));
 
+        // SET UP FILE WRITING OUTPUT THROUGH PRINTWRITER
+        PrintWriter output = new PrintWriter(new File("StringsTwoOutput.txt"));
+
         // GO THROUGH EVERY LINE IN THE FILE (THERE'S ONLY ONE IN THIS CASE)
         while (input.hasNext()) {
             // MOVE SCANNER INTO THE NEXT
@@ -22,9 +25,11 @@ public class StringsTwo {
             int strCutoff = (strLength % 2 == 1) ? (int) (strLength / 2 + 1) : strLength / 2;
             String firstHalf = line.substring(0, strCutoff);
             String secondHalf = line.substring(strCutoff, strLength);
-            System.out.println(firstHalf + " " + secondHalf);
-
+            output.println(firstHalf);
+            output.println(secondHalf);
         }
+
+        output.close();
     }
 
 }
