@@ -2,11 +2,8 @@
 //IMPORTS
 import java.util.Scanner;
 import java.io.*;
-import java.util.ArrayList;
 
 public class StringsTwo {
-    public static final String[] vowels = new String[] { "a", "e", "i", "o", "u" };
-
     public static void main(String[] args) throws IOException {
         // SET UP FILE READING INPUT THROUGH SCANNER
         Scanner input = new Scanner(new File("StringsTwo.txt"));
