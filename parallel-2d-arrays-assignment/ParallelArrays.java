@@ -20,7 +20,7 @@ public class ParallelArrays {
         }
 
         // Iterate through every possible dice number
-        for (int number = 0; number < 12; number++) {
+        for (int number = 1; number < 12; number++) {
             // Set the times added to 0
             int timesAddedToNumber = 0;
 

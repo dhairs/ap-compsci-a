@@ -3,46 +3,28 @@ import java.util.Scanner;
 
 // Minesweeper
 public class TwoDimensionalArrays {
+
+    // Generated grid has the mines
+    public static ArrayList<ArrayList<Integer>> generatedGrid = new ArrayList<>();
+
+    // Empty grid is just an empty grid that marks where the user has clicked
+    public static ArrayList<ArrayList<Integer>> emptyGrid = new ArrayList<>();
+
+    // User grid is the grid that tracks if the user has selected all the open
+    // spaces
+    public static ArrayList<ArrayList<Integer>> userGrid = new ArrayList<>();
+
     public static void main(String[] args) {
+        runGame();
+    }
+
+    public static void runGame() {
         // Define the variables
         Scanner input = new Scanner(System.in);
+        reset();
 
         // A variable so we can do some while loop magic
         boolean alive = true;
-
-        // Generated grid has the mines
-        ArrayList<ArrayList<Integer>> generatedGrid = new ArrayList<>();
-
-        // Empty grid is just an empty grid that marks where the user has clicked
-        ArrayList<ArrayList<Integer>> emptyGrid = new ArrayList<>();
-
-        // User grid is the grid that tracks if the user has selected all the open
-        // spaces
-        ArrayList<ArrayList<Integer>> userGrid = new ArrayList<>();
-
-        int gridSize = 10;
-        // Generate the grid
-        for (int row = 0; row < gridSize; row++) {
-            // Add a new row to the generated grid
-            generatedGrid.add(new ArrayList<Integer>());
-
-            // Add a new row to the empty grid
-            emptyGrid.add(new ArrayList<Integer>());
-
-            // Add a new row to the user grid
-            userGrid.add(new ArrayList<Integer>());
-
-            for (int column = 0; column < gridSize; column++) {
-
-                int numToAdd = ((int) (Math.random() * 10) > 7 ? 1 : 0);
-                // Add a new column to the generated grid
-                generatedGrid.get(row).add(numToAdd);
-                userGrid.get(row).add(numToAdd);
-
-                // Add a new column to the empty grid
-                emptyGrid.get(row).add(0);
-            }
-        }
 
         while (alive) {
             // Print the empty grid
@@ -57,7 +39,9 @@ public class TwoDimensionalArrays {
             // check if the user clicked on a mine, if they did, end the game
             if (generatedGrid.get(userRow).get(userColumn) == 1) {
                 System.out.println("Oops! You clicked on a mine, game over! 💀");
+
                 alive = false;
+
             } else {
                 // if they didn't click on a mine, update the empty grid to show that they
                 // picked a new spot
@@ -72,6 +56,13 @@ public class TwoDimensionalArrays {
 
         }
 
+        // if the user wants to restart, run the reset function
+        System.out.println("Would you like to restart? (1 for yes, 0 for no)");
+        int restart = input.nextInt();
+        if (restart == 1) {
+            runGame();
+        }
+        alive = false;
         input.close();
     }
 
@@ -101,5 +92,31 @@ public class TwoDimensionalArrays {
             }
         }
         return true;
+    }
+
+    public static void reset() {
+        int gridSize = 10;
+        // Generate the grid
+        for (int row = 0; row < gridSize; row++) {
+            // Add a new row to the generated grid
+            generatedGrid.add(new ArrayList<Integer>());
+
+            // Add a new row to the empty grid
+            emptyGrid.add(new ArrayList<Integer>());
+
+            // Add a new row to the user grid
+            userGrid.add(new ArrayList<Integer>());
+
+            for (int column = 0; column < gridSize; column++) {
+
+                int numToAdd = ((int) (Math.random() * 10) > 7 ? 1 : 0);
+                // Add a new column to the generated grid
+                generatedGrid.get(row).add(numToAdd);
+                userGrid.get(row).add(numToAdd);
+
+                // Add a new column to the empty grid
+                emptyGrid.get(row).add(0);
+            }
+        }
     }
 }
