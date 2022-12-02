@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class OverloadingOne {
     private static OverloadingOneOperations operations = new OverloadingOneOperations();
 
+    // variables for each type of data
     public static int[] intNumbers = new int[2];
     public static double[] doubleNumbers = new double[2];
     public static float[] floatNumbers = new float[2];
