@@ -1,4 +1,4 @@
-# Overloading Assignments
+# Inheritance Assignments
 
 ## Assignment 1
 
