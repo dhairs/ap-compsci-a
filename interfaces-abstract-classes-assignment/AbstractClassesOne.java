@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class AbstractClassesOne extends IComboLock {
     public static void main(String[] args) {
 
-        /// setup the lock and lock it
+        // setup the lock and lock it
         AbstractClassesOne lock = new AbstractClassesOne();
         lock.setcombo(1, 2, 3);
         lock.lock();
