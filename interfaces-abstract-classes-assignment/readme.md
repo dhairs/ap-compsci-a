@@ -90,8 +90,8 @@ public void unlock(int num1, int num2, int num3) {
     if (num1 == combo[0] && num2 == combo[1] && num3 == combo[2]) {
         locked = false;
         System.out.println("Unlocked Successfully!");
-    }
-    System.out.println("Incorrect Combination, try again.");
+    } else
+        System.out.println("Incorrect Combination, try again.");
 }
 ```
 

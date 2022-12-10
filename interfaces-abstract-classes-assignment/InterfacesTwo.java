@@ -2,12 +2,12 @@ public interface InterfacesTwo {
 
     public void setPassword(String password);
 
-    public boolean checkPassword();
+    public boolean checkPassword(String enteredPassword);
 
-    public void resetPassword();
+    public void resetPassword(String newPassword);
 
     public void lockDocument();
 
-    public void unlockDocument();
+    public void unlockDocument(String enteredPassword);
 
 }

@@ -24,6 +24,8 @@ public class InterfacesOne implements PhoneBook {
                 // (assuming it's the format of "<name> <number>")
                 String[] parts = line.split(" ");
 
+                System.out.println("Name: " + parts[0] + " Number: " + parts[1] + "");
+
                 // now just set the name and number to the arrays
                 names[currentIndex] = parts[0];
                 numbers[currentIndex] = parts[1];
@@ -44,9 +46,9 @@ public class InterfacesOne implements PhoneBook {
 
         // for each name in the array, check if it's the same as the entered name
         // if it is, return the number at the same index in the numbers array
-        for (String name : names) {
-            if (name.equals(enteredName)) {
-                return numbers[currentIndex];
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] == (enteredName)) {
+                return numbers[i];
             }
         }
 
@@ -58,9 +60,9 @@ public class InterfacesOne implements PhoneBook {
 
         // for each number in the array, check if it's the same as the entered number
         // if it is, return the name at the same index in the names array
-        for (String number : numbers) {
-            if (number.equals(enteredNumber)) {
-                return names[currentIndex];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == enteredNumber) {
+                return names[i];
             }
         }
 
@@ -73,7 +75,7 @@ public class InterfacesOne implements PhoneBook {
         InterfacesOne phonebook = new InterfacesOne();
         phonebook.ReadInfo();
         // testing the methods;
-        System.out.println(phonebook.FindNumber("Test"));
+        System.out.println(phonebook.FindNumber("Dhairya"));
         System.out.println(phonebook.FindName("123456789"));
     }
 }

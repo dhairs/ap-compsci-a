@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class AbstractClassesOne extends IComboLock {
     public static void main(String[] args) {
-
         // setup the lock and lock it
         AbstractClassesOne lock = new AbstractClassesOne();
         lock.setcombo(1, 2, 3);
@@ -33,8 +32,8 @@ public class AbstractClassesOne extends IComboLock {
         if (num1 == combo[0] && num2 == combo[1] && num3 == combo[2]) {
             locked = false;
             System.out.println("Unlocked Successfully!");
-        }
-        System.out.println("Incorrect Combination, try again.");
+        } else
+            System.out.println("Incorrect Combination, try again.");
     }
 
 }
