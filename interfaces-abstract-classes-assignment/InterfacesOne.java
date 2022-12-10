@@ -61,6 +61,7 @@ public class InterfacesOne implements PhoneBook {
         // for each number in the array, check if it's the same as the entered number
         // if it is, return the name at the same index in the names array
         for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
             if (numbers[i] == enteredNumber) {
                 return names[i];
             }
